@@ -1,0 +1,47 @@
+export PATH=$PATH:$HOME/
+alias phpv5="sudo update-alternatives --set php /usr/bin/php5.6;
+sudo update-alternatives --set php-config /usr/bin/php-config5.6;
+sudo update-alternatives --set phpdbg /usr/bin/phpdbg5.6;
+sudo update-alternatives --set phpize /usr/bin/phpize5.6;
+sudo pear config-set php_ini /etc/php/5.6/mods-available/global_conf_for_pear_mods.ini;
+sudo a2dismod php7.0;
+sudo a2dismod php7.1;
+sudo a2enmod php5.6;
+sudo service apache2 restart"
+alias phpv7="sudo update-alternatives --set php /usr/bin/php7.0 ; 
+sudo update-alternatives --set php-config /usr/bin/php-config7.0;
+sudo update-alternatives --set phpdbg /usr/bin/phpdbg7.0;
+sudo update-alternatives --set phpize /usr/bin/phpize7.0;
+sudo pear config-set php_ini /etc/php/7.0/mods-available/global_conf_for_pear_mods.ini;
+sudo a2dismod php5.6;
+sudo a2dismod php7.1;
+sudo a2enmod php7.0;
+sudo service apache2 restart"
+alias phpv71="sudo update-alternatives --set php /usr/bin/php7.1;
+sudo update-alternatives --set php-config /usr/bin/php-config7.1;
+sudo update-alternatives --set phpdbg /usr/bin/phpdbg7.1;
+sudo update-alternatives --set phpize /usr/bin/phpize7.1;
+sudo pear config-set php_ini /etc/php/7.1/mods-available/global_conf_for_pear_mods.ini;
+sudo a2dismod php5.6;
+sudo a2dismod php7.0;
+sudo a2enmod php7.1;
+sudo service apache2 restart"
+alias i='cd ~/integration/git/integration && git current-branch'
+alias ir='git integration-reset'
+alias irm='git checkout master; git integration-reset'
+alias id='git integration-diff'
+alias imaster='cd /var/www/html/imaster'
+alias i33='cd /var/www/html/i33'
+alias i32='cd /var/www/html/i32'
+alias i31='cd /var/www/html/i31'
+alias i30='cd /var/www/html/i30'
+alias i27='cd /var/www/html/i27'
+alias master='cd /var/www/html/master'
+alias 33='cd /var/www/html/s33'
+alias 32='cd /var/www/html/s32'
+alias bd='~/integration/scripts/fetch_details.sh'
+alias mf='~/integration/scripts/tracker_fetch.sh'
+alias sp='. ~/integration/scripts/sshpass.sh' #Leading dot (.) runs in current shell, not new process.
+alias bi='~/scripts/testing/behat_init.sh'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
