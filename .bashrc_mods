@@ -42,6 +42,7 @@ alias 32='cd /var/www/html/s32'
 alias bd='~/integration/scripts/fetch_details.sh'
 alias mf='~/integration/scripts/tracker_fetch.sh'
 alias sp='. ~/integration/scripts/sshpass.sh' #Leading dot (.) runs in current shell, not new process.
-alias bi='~/scripts/testing/behat_init.sh'
+alias bi='~/scripts/moodle-scripts/behat_init.sh'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+alias dockerclean="~/scripts/moodle-scripts/dockerclean.sh"
