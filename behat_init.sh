@@ -17,9 +17,9 @@ XVFB="${2:-1}"
 cfg=""
 
 # Locations of some bits we need.
-SELENIUM_JAR="/opt/selenium-server-standalone-2.53.0.jar"
+SELENIUM_JAR="/opt/selenium-server-standalone-2.53.1.jar"
 PHANTOMJS_BIN="/opt/phantomjs"
-FIREFOX_BIN="/opt/Firefox-46.0.1/firefox-sdk/bin/firefox"
+FIREFOX_BIN="/opt/Firefox-47.0.1/firefox-bin"
 CHROMEDRIVER_BIN="/usr/bin/chromedriver"
 # Note: Chromedriver expects /usr/bin/google-chrome as chrome location or symlink.
 
