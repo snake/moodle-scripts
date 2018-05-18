@@ -5,7 +5,7 @@
 # copy in the docker config file.
 # Now, set env vars and run the moodle docker.
 
-MOODLEDOCKERPATH="/home/jake/scripts/docker-moodle"
+MOODLEDOCKERPATH="/home/jake/scripts/moodle-docker"
 MOODLEDOCKERCONFIGNAME="config.docker-template.php"
 INSTANCENAME="${1:-msmaster}"
 INSTANCEDB="${2:-mssql}"
