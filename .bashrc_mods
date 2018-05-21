@@ -6,6 +6,7 @@ sudo update-alternatives --set phpize /usr/bin/phpize5.6;
 sudo pear config-set php_ini /etc/php/5.6/mods-available/global_conf_for_pear_mods.ini;
 sudo a2dismod php7.0;
 sudo a2dismod php7.1;
+sudo a2dismod php7.2;
 sudo a2enmod php5.6;
 sudo service apache2 restart"
 alias phpv7="sudo update-alternatives --set php /usr/bin/php7.0 ; 
@@ -15,6 +16,7 @@ sudo update-alternatives --set phpize /usr/bin/phpize7.0;
 sudo pear config-set php_ini /etc/php/7.0/mods-available/global_conf_for_pear_mods.ini;
 sudo a2dismod php5.6;
 sudo a2dismod php7.1;
+sudo a2dismod php7.2;
 sudo a2enmod php7.0;
 sudo service apache2 restart"
 alias phpv71="sudo update-alternatives --set php /usr/bin/php7.1;
@@ -24,13 +26,25 @@ sudo update-alternatives --set phpize /usr/bin/phpize7.1;
 sudo pear config-set php_ini /etc/php/7.1/mods-available/global_conf_for_pear_mods.ini;
 sudo a2dismod php5.6;
 sudo a2dismod php7.0;
+sudo a2dismod php7.2;
 sudo a2enmod php7.1;
+sudo service apache2 restart"
+alias phpv72="sudo update-alternatives --set php /usr/bin/php7.2;
+sudo update-alternatives --set php-config /usr/bin/php-config7.2;
+sudo update-alternatives --set phpdbg /usr/bin/phpdbg7.2;
+sudo update-alternatives --set phpize /usr/bin/phpize7.2;
+sudo pear config-set php_ini /etc/php/7.2/mods-available/global_conf_for_pear_mods.ini;
+sudo a2dismod php5.6;
+sudo a2dismod php7.0;
+sudo a2dismod php7.1;
+sudo a2enmod php7.2;
 sudo service apache2 restart"
 alias i='cd ~/integration/git/integration && git current-branch'
 alias ir='git integration-reset'
 alias irm='git checkout master; git integration-reset'
 alias id='git integration-diff'
 alias imaster='cd /var/www/html/imaster'
+alias i35='cd /var/www/html/i35'
 alias i34='cd /var/www/html/i34'
 alias i33='cd /var/www/html/i33'
 alias i32='cd /var/www/html/i32'
@@ -41,8 +55,8 @@ alias master='cd /var/www/html/master'
 alias 34='cd /var/www/html/s34'
 alias 33='cd /var/www/html/s33'
 alias 32='cd /var/www/html/s32'
-alias bd='~/integration/scripts/fetch_details.sh'
-alias mf='~/integration/scripts/tracker_fetch.sh'
+alias bd='~/scripts/moodle-scripts/branch_details.sh'
+alias mf='~/scripts/moodle-scripts/tracker_fetch.sh'
 alias sp='. ~/scripts/moodle-scripts/sshpass.sh' #Leading dot (.) runs in current shell, not new process.
 alias bi='~/scripts/moodle-scripts/behat_init.sh'
 alias mdr='~/scripts/moodle-scripts/mdockerrun.sh'
