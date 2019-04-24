@@ -17,25 +17,26 @@ XVFB="${2:-1}"
 cfg=""
 
 # Locations of some bits we need.
-SELENIUM_JAR="/opt/selenium-server-standalone-2.53.1.jar"
+SELENIUM_JAR="/opt/selenium-server-standalone-3.141.59.jar"
 PHANTOMJS_BIN="/opt/phantomjs"
 FIREFOX_BIN="/opt/Firefox-47.0.1/firefox-bin"
 CHROMEDRIVER_BIN="/usr/bin/chromedriver"
 # Note: Chromedriver expects /usr/bin/google-chrome as chrome location or symlink.
 
 # Base run command, modified by args.
-CMD="java -jar $SELENIUM_JAR"
+CMDPRE="java"
+CMDPOST="-jar $SELENIUM_JAR"
 
 # Determine driver.
 if [ "$BROWSER" = 'firefox' ]; then
 	cfg=$cfg"Browser: Firefox\n"
-	CMD="$CMD -Dwebdriver.firefox.bin=\"$FIREFOX_BIN\""
+	CMD="$CMDPRE -Dwebdriver.firefox.bin=\"$FIREFOX_BIN\" $CMDPOST"
 elif [ "$BROWSER" = 'phantomjs' ]; then
 	cfg=$cfg"Browser: PhantomJS\n"
 	CMD="$PHANTOMJS_BIN --webdriver=4444"
 else
 	cfg=$cfg"Browser: Chrome\n"
-	CMD="$CMD -Dwebdriver.chrome.driver=\"$CHROMEDRIVER_BIN\""
+    CMD="$CMDPRE -Dwebdriver.chrome.driver=\"$CHROMEDRIVER_BIN\" $CMDPOST"
 fi
 
 # Determine frame buffering.
