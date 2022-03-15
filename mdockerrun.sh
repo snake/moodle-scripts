@@ -30,7 +30,15 @@ cp "$MOODLEDOCKERPATH/$MOODLEDOCKERCONFIGNAME" "$INSTANCEPATH/config.php"
 export MOODLE_DOCKER_WWWROOT="$INSTANCEPATH"
 export MOODLE_DOCKER_DB="$INSTANCEDB"
 
+# Print config.
+echo "Spinning up containers with config:"
+echo " :wwwroot: $MOODLE_DOCKER_WWWROOT"
+echo " :db: $MOODLE_DOCKER_DB"
+
 # Run the docker.
-eval "$MOODLEDOCKERPATH/bin/moodle-docker-compose up -d"
+$MOODLEDOCKERPATH/bin/moodle-docker-compose up -d
+
+echo "Waiting for DB..."
+$MOODLEDOCKERPATH/bin/moodle-docker-wait-for-db
 
 echo "Site up at http://localhost:8000"
