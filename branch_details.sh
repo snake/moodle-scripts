@@ -12,7 +12,7 @@ BRANCH_PREFERENCE="${2:-}"
 if [ -z "$BRANCH_PREFERENCE" ]; then
 	CURRENT_BRANCH="`git current-branch`"
 	IFS=_ read var1 var2 var3 <<< "$CURRENT_BRANCH"
-	if [[ $var2 =~ ^-?[0-9]+$ ]] && [[ $var2 -lt 100 ]]; then
+	if [[ $var2 =~ ^-?[0-9]+$ ]] && [[ $var2 -lt 1000 ]]; then
 		BRANCH_PREFERENCE="$var2"
 	else
 		BRANCH_PREFERENCE="master"
@@ -23,7 +23,21 @@ fi
 PARSED_CONTENTS="`wget -qO- https://tracker.moodle.org/browse/MDL-$1 2>/dev/null`"
 
 # Make the right choice about the branch to check.
-if [ $BRANCH_PREFERENCE == "35" ]; then
+if [ $BRANCH_PREFERENCE == "400" ]; then
+    XPATH="//*[@id=\"customfield_15910-val\"]"
+elif [ $BRANCH_PREFERENCE == "311" ]; then
+    XPATH="//*[@id=\"customfield_15610-val\"]"
+elif [ $BRANCH_PREFERENCE == "310" ]; then
+    XPATH="//*[@id=\"customfield_15428-val\"]"
+elif [ $BRANCH_PREFERENCE == "39" ]; then
+    XPATH="//*[@id=\"customfield_15421-val\"]"
+elif [ $BRANCH_PREFERENCE == "38" ]; then
+    XPATH="//*[@id=\"customfield_14910-val\"]"
+elif [ $BRANCH_PREFERENCE == "37" ]; then
+    XPATH="//*[@id=\"customfield_14810-val\"]"
+elif [ $BRANCH_PREFERENCE == "36" ]; then
+    XPATH="//*[@id=\"customfield_14610-val\"]"
+elif [ $BRANCH_PREFERENCE == "35" ]; then
 	XPATH="//*[@id=\"customfield_14311-val\"]"
 elif [ $BRANCH_PREFERENCE == "34" ]; then
 	XPATH="//*[@id=\"customfield_14212-val\"]"
