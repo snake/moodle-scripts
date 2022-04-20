@@ -4,6 +4,11 @@
 # For issues with backport branches, the correct branch name can be fetched either by
 # providing the preferred branch in $2 (e.g. master, 31 or 32) or if omitted, the script
 # will attempt to infer the correct branch based on your currently checked out git branch.
+# REQUIRES:
+# - xmllint
+
+# Requirements check
+hash xmllint 2>/dev/null || { echo >&2 "xmllint is required (apt-get install libxml2-utils). Aborting."; exit 1; }
 
 # Branch can be specified
 BRANCH_PREFERENCE="${2:-}"
